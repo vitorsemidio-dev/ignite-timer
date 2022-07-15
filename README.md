@@ -13,14 +13,6 @@
 <img alt="badge npm" src=".github/badge-npm.svg">
 </p>
 
----
-
-O **Ignite Timer** é uma aplicação no modelo de Pomodoro. **Pomodoro** é uma metodologia de estudo onde a pessoa fica totalmente focado em uma tarefa por um tempo específico e depois tira um tempo de descanso.
-
-Nesta aplicação é possível dá um nome para a tarefa, definir o tempo de foco. Também há um histórico dos pomodoris realizados.
-
-Projeto foi hospedado na Vercel. Acesse o **Ignite Timer** desenvolvido [clicando aqui]().
-
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-rodar-o-projeto">Como rodar o projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -32,9 +24,14 @@ Projeto foi hospedado na Vercel. Acesse o **Ignite Timer** desenvolvido [clicand
 
 ## 💻 Projeto
 
-lorem
+O **Ignite Timer** é uma aplicação no modelo de Pomodoro. **Pomodoro** é uma metodologia de estudo onde a pessoa fica totalmente focado em uma tarefa por um tempo específico e depois tira um tempo de descanso.
 
-<img src=".github/imagem.png" alt="imagem bacana" />
+Nesta aplicação é possível dá um nome para a tarefa, definir o tempo de foco. Também há um histórico dos pomodoris realizados.
+
+Projeto foi hospedado na Vercel. Acesse o **Ignite Timer** desenvolvido [clicando aqui]().
+
+<img src=".github/home.png" alt="página inicial do projeto Ignite Timer com pomodoro ligado" />
+<img src=".github/historico.png" alt="página de histórico com a listagem dos pomodoros" />
 
 ## 🧭 Como rodar o projeto
 
