@@ -1,6 +1,6 @@
 import { differenceInSeconds } from "date-fns";
 import { useContext, useEffect } from "react";
-import { CyclesContext } from "../..";
+import { CyclesContext } from "../../../../context/CyclesContext";
 import { CountdownContainer, Separator } from "./styles";
 
 export function Countdown() {
@@ -56,7 +56,7 @@ export function Countdown() {
 
   useEffect(() => {
     if (activeCycle) {
-      document.title = `${minutes}:${seconds}`;
+      document.title = `${minutes}:${seconds} | Ignite Timer`;
     }
   }, [minutes, seconds, activeCycle]);
 
