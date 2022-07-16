@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../../styles/responsive/devices";
 
 export const CountdownContainer = styled.div`
   font-family: "Roboto Mono", monospace;
@@ -11,6 +12,16 @@ export const CountdownContainer = styled.div`
     background: ${(props) => props.theme["gray-700"]};
     padding: 2rem 1rem;
     border-radius: 8px;
+  }
+
+  @media ${device.mobileL} {
+    font-size: 6rem;
+    line-height: 4rem;
+  }
+
+  @media ${device.mobileM} {
+    font-size: 4rem;
+    line-height: 2rem;
   }
 `;
 export const Separator = styled.div`

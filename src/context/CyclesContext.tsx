@@ -11,7 +11,8 @@ import {
   interruptCurrentCycleAction,
   markCurrentCycleAsFinishedAction,
 } from "../reducers/cycles/actions";
-import { Cycle, cyclesReducer } from "../reducers/cycles/reducer";
+import { Cycle, cyclesReducer, CyclesState } from "../reducers/cycles/reducer";
+import { LocalStorageManager } from "../utils/local-storage-manager";
 
 interface CreateCycleData {
   task: string;
@@ -34,23 +35,22 @@ export const CyclesContext = createContext({} as CyclesContextType);
 interface CyclesContextProviderProps {
   children: ReactNode;
 }
+
+const cyclesStateInitialValues: CyclesState = {
+  cycles: [],
+  activeCycleId: null,
+};
+
 export function CyclesContextProvider({
   children,
 }: CyclesContextProviderProps) {
   const [cyclesState, dispatch] = useReducer(
     cyclesReducer,
-    {
-      cycles: [],
-      activeCycleId: null,
-    },
+    cyclesStateInitialValues,
     () => {
-      const storedStateAsJSON = localStorage.getItem(
-        "@ignite-timer:cycles-state-1.0.0",
-      );
-
-      if (storedStateAsJSON) {
-        return JSON.parse(storedStateAsJSON);
-      }
+      const cyclesStateStorage =
+        LocalStorageManager.getItem<CyclesState>("cycles-state");
+      return cyclesStateStorage || cyclesStateInitialValues;
     },
   );
 
