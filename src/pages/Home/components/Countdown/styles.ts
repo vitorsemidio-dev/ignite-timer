@@ -14,9 +14,14 @@ export const CountdownContainer = styled.div`
     border-radius: 8px;
   }
 
-  @media ${device.mobileL} {
+  @media ${device.tabletM} {
     font-size: 6rem;
     line-height: 4rem;
+  }
+
+  @media ${device.tabletS} {
+    font-size: 5rem;
+    line-height: 3rem;
   }
 
   @media ${device.mobileM} {

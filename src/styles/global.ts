@@ -49,7 +49,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
   }
 
-  @media ${device.tablet} {
+  @media ${device.tabletM} {
     :root {
       font-size: 87.5%;
     }
