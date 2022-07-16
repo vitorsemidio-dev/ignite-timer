@@ -38,13 +38,13 @@ Projeto foi hospedado na Vercel. Acesse o **Ignite Timer** desenvolvido [clicand
 **Clone este repositório**
 
 ```bash
-git clone https://github.com/vitorsemidio-dev/projeto.git
+git clone https://github.com/vitorsemidio-dev/ignite-timer.git
 ```
 
 **Acesse a pasta**
 
 ```bash
-cd projeto
+cd ignite-timer
 ```
 
 **Instale as dependências**
@@ -67,10 +67,15 @@ npm run dev
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
+- [Immer](https://immerjs.github.io/immer/)
+- [Phosphor React](https://phosphoricons.com/)
 - [ReactJS](https://pt-br.reactjs.org/)
+- [React Hook Form](https://react-hook-form.com/)
+- [React Router Dom](https://reactrouter.com/)
 - [Styled Components](https://styled-components.com/)
 - [TypeScript](https://www.typescriptlang.org/pt/)
 - [Vite](https://vitejs.dev/)
+- [Zod](https://zod.dev/)
 
 ## 🔖 Layout
 
