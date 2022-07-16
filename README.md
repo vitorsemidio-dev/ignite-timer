@@ -28,7 +28,7 @@ O **Ignite Timer** é uma aplicação no modelo de Pomodoro. **Pomodoro** é uma
 
 Nesta aplicação é possível dá um nome para a tarefa, definir o tempo de foco. Também há um histórico dos pomodoris realizados.
 
-Projeto foi hospedado na Vercel. Acesse o **Ignite Timer** desenvolvido [clicando aqui]().
+Projeto foi hospedado na Vercel. Acesse o **Ignite Timer** desenvolvido [clicando aqui](https://ignite-timer-vitorsemidio-dev.vercel.app/).
 
 <img src=".github/home.png" alt="página inicial do projeto Ignite Timer com pomodoro ligado" />
 <img src=".github/historico.png" alt="página de histórico com a listagem dos pomodoros" />
