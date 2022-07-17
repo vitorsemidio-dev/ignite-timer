@@ -10,6 +10,7 @@ import {
   addNewCycleAction,
   interruptCurrentCycleAction,
   markCurrentCycleAsFinishedAction,
+  removeCycleAction,
 } from "../reducers/cycles/actions";
 import { Cycle, cyclesReducer, CyclesState } from "../reducers/cycles/reducer";
 import { LocalStorageManager } from "../utils/local-storage-manager";
@@ -27,6 +28,7 @@ interface CyclesContextType {
   markCurrentCycleAsFinished: () => void;
   setSecondsPassed: (seconds: number) => void;
   createNewCycle: (data: CreateCycleData) => void;
+  removeCycle: (cycleId: string) => void;
   interruptCurrentCycle: () => void;
 }
 
@@ -84,6 +86,10 @@ export function CyclesContextProvider({
     dispatch(interruptCurrentCycleAction());
   }
 
+  function removeCycle(cycleId: string) {
+    dispatch(removeCycleAction(cycleId));
+  }
+
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(() => {
     if (activeCycle) {
       return differenceInSeconds(new Date(), new Date(activeCycle.startDate));
@@ -93,22 +99,21 @@ export function CyclesContextProvider({
   });
 
   useEffect(() => {
-    const stateJSON = JSON.stringify(cyclesState);
-
-    localStorage.setItem("@ignite-timer:cycles-state-1.0.0", stateJSON);
+    LocalStorageManager.setItem("cycles-state", cyclesState);
   }, [cyclesState]);
 
   return (
     <CyclesContext.Provider
       value={{
-        cycles,
+        amountSecondsPassed,
         activeCycle,
         activeCycleId,
-        markCurrentCycleAsFinished,
-        amountSecondsPassed,
-        setSecondsPassed,
+        cycles,
         createNewCycle,
         interruptCurrentCycle,
+        markCurrentCycleAsFinished,
+        setSecondsPassed,
+        removeCycle,
       }}>
       {children}
     </CyclesContext.Provider>

@@ -1,4 +1,5 @@
 import { produce } from "immer";
+import { ActionTypes } from "./actions";
 
 export interface Cycle {
   id: string;
@@ -12,12 +13,6 @@ export interface Cycle {
 export interface CyclesState {
   cycles: Cycle[];
   activeCycleId: string | null;
-}
-
-export enum ActionTypes {
-  ADD_NEW_CYCLE = "ADD_NEW_CYCLE",
-  INTERRUPT_CURRENT_CYCLE = "INTERRUPT_CURRENT_CYCLE",
-  MARK_CURRENT_CYCLE_AS_FINISHED = "MARK_CURRENT_CYCLE_AS_FINISHED",
 }
 
 export function cyclesReducer(state: CyclesState, action: any) {
@@ -53,6 +48,17 @@ export function cyclesReducer(state: CyclesState, action: any) {
       return produce(state, (draft) => {
         draft.activeCycleId = null;
         draft.cycles[currentCycleIndex].finishedDate = new Date();
+      });
+    }
+    case ActionTypes.REMOVE_CYCLE: {
+      if (!action.payload.cycleIdToRemove) {
+        return state;
+      }
+
+      return produce(state, (draft) => {
+        draft.cycles = draft.cycles.filter(
+          (cycle) => cycle.id !== action.payload.cycleIdToRemove,
+        );
       });
     }
     default:
